@@ -1,0 +1,25 @@
+<h1>Post A New Article</h1>
+<%= form_for :article, url: articles_path do |f| %>
+
+  <% if @article.errors.any? %>
+    <% @article.errors.full_messages.each do |msg| %>
+      <div class="alert alert-danger">
+        <p class="mb-0"><%= msg %></p>
+      </div>
+    <% end %>
+  <% end %>
+
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field(:title, {:class => 'form-control'}) %>
+  </p>
+
+  <p>
+    <%= f.label :body %>
+    <%= f.text_area(:body, {:class => 'form-control'}) %>
+  </p>
+
+  <p>
+    <%= f.submit({:class => 'btn btn-primary'}) %>
+  </p>
+<% end %>

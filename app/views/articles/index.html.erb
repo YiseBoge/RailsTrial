@@ -1,0 +1,11 @@
+<% @articles.each do |article| %>
+  <div class="card border-primary mb-3">
+    <div class="card-header"><%= article.title %></div>
+    <div class="card-body">
+      <h4 class="card-title"><%= article.body %></h4>
+      <!--      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+      <%= link_to "Read More", article_path(article), :class => 'btn btn-secondary' %>
+    </div>
+  </div>
+<% end %>
+
